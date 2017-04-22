@@ -18,6 +18,8 @@ class ArticlesController < ApplicationController
         # render json: params
         # render plain: params[:article].inspect
         @article = Article.new(article_params)
+        @article.user = User.find(2)
+
         if @article.save
             #do something..
             flash[:success] = "Article was successfully created"
