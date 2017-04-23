@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
         # render json: params
         # render plain: params[:article].inspect
         @article = Article.new(article_params)
-        @article.user = User.find(2)
+        @article.user = current_user
 
         if @article.save
             #do something..
